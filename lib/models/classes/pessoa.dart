@@ -1,7 +1,9 @@
 class Pessoa {
   String _nome = "";
-  double _peso = 0.0;
-  double _altura = 0.0;
+  double _peso = 0;
+  double _altura = 0;
+  double _imc = 0;
+  String _status = "";
 
   void setNome(String nome) {
     _nome = nome;
@@ -27,6 +29,22 @@ class Pessoa {
     return _altura;
   }
 
+  void setImc(double imc) {
+    _imc = imc;
+  }
+
+  double getImc() {
+    return _imc;
+  }
+
+  void setStatus(String status) {
+    _status = status;
+  }
+
+  String getStatus() {
+    return _status;
+  }
+
   Pessoa(String nome, double peso, double altura) {
     _nome = nome;
     _peso = peso;
@@ -35,6 +53,10 @@ class Pessoa {
 
   @override
   String toString() {
-    return {"Nome:": _nome, "Peso:": _peso, "Altura:": _altura}.toString();
+    return {
+      "Nome": _nome,
+      "Peso": "${_peso}kg",
+      "Altura": "${_altura}m",
+    }.toString();
   }
 }
